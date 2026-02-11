@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>임영민 | 백엔드 개발자</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f5f3ff',
+              100: '#ede9fe',
+              200: '#ddd6fe',
+              300: '#c4b5fd',
+              400: '#a78bfa',
+              500: '#7c3aed',
+              600: '#6d28d9',
+              700: '#5b21b6',
+              800: '#4c1d95',
+              900: '#2e1065',
+            }
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-brand-50 text-gray-800 font-sans">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#hero" class="text-xl font-bold text-brand-700">
+          YM<span class="text-brand-500">.dev</span>
+        </a>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-1">
+          <a href="#hero" class="nav-link px-4 py-2 rounded-full text-gray-500 hover:text-brand-700 hover:bg-brand-100/60 transition-all duration-300 text-sm font-medium">Home</a>
+          <a href="#about" class="nav-link px-4 py-2 rounded-full text-gray-500 hover:text-brand-700 hover:bg-brand-100/60 transition-all duration-300 text-sm font-medium">About</a>
+          <a href="#skills" class="nav-link px-4 py-2 rounded-full text-gray-500 hover:text-brand-700 hover:bg-brand-100/60 transition-all duration-300 text-sm font-medium">Skills</a>
+          <a href="#projects" class="nav-link px-4 py-2 rounded-full text-gray-500 hover:text-brand-700 hover:bg-brand-100/60 transition-all duration-300 text-sm font-medium">Projects</a>
+          <a href="#contact" class="nav-link px-5 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition-all duration-300 text-sm font-medium">Contact</a>
+        </div>
+        <!-- Mobile Menu Button -->
+        <button id="menu-btn" class="md:hidden text-gray-500 hover:text-brand-700 focus:outline-none" aria-label="메뉴 열기">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border border-gray-100 shadow-lg mx-4 rounded-2xl mt-2">
+      <div class="px-4 py-3 space-y-1">
+        <a href="#hero" class="mobile-nav-link block text-gray-500 hover:text-brand-700 hover:bg-brand-50 rounded-xl px-4 py-2.5 transition-all text-sm font-medium">Home</a>
+        <a href="#about" class="mobile-nav-link block text-gray-500 hover:text-brand-700 hover:bg-brand-50 rounded-xl px-4 py-2.5 transition-all text-sm font-medium">About</a>
+        <a href="#skills" class="mobile-nav-link block text-gray-500 hover:text-brand-700 hover:bg-brand-50 rounded-xl px-4 py-2.5 transition-all text-sm font-medium">Skills</a>
+        <a href="#projects" class="mobile-nav-link block text-gray-500 hover:text-brand-700 hover:bg-brand-50 rounded-xl px-4 py-2.5 transition-all text-sm font-medium">Projects</a>
+        <a href="#contact" class="mobile-nav-link block text-white bg-brand-600 hover:bg-brand-700 rounded-xl px-4 py-2.5 transition-all text-sm font-medium text-center">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-brand-50 via-white to-brand-100/50">
+    <!-- Subtle background shapes -->
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute top-20 right-10 w-72 h-72 bg-brand-200/30 rounded-full blur-[100px]"></div>
+      <div class="absolute bottom-20 left-10 w-96 h-96 bg-brand-100/40 rounded-full blur-[120px]"></div>
+    </div>
+    <div class="relative z-10 max-w-4xl mx-auto text-center px-4">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full border border-brand-200 shadow-sm mb-8 fade-in">
+        <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+        <span class="text-sm text-gray-600 font-medium">Available for work</span>
+      </div>
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 fade-in text-gray-900 leading-tight">
+        안녕하세요, 저는<br>
+        <span class="text-brand-600">임영민</span>입니다
+      </h1>
+      <p class="text-xl sm:text-2xl text-gray-400 mb-4 fade-in font-medium">백엔드 개발자</p>
+      <p class="text-gray-500 max-w-xl mx-auto mb-10 text-lg leading-relaxed fade-in">
+        안정적이고 확장 가능한 서버를 설계하고,<br>
+        깔끔한 코드로 문제를 해결합니다.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+        <a href="#projects" class="px-8 py-3.5 bg-brand-600 rounded-full font-semibold text-white hover:bg-brand-700 transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 hover:-translate-y-0.5 text-sm">
+          프로젝트 보기
+        </a>
+        <a href="#contact" class="px-8 py-3.5 bg-white border border-gray-200 rounded-full font-semibold text-gray-700 hover:border-brand-300 hover:text-brand-700 transition-all duration-300 hover:-translate-y-0.5 text-sm shadow-sm">
+          연락하기
+        </a>
+      </div>
+    </div>
+    <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 text-gray-300 animate-bounce">
+      <i class="fas fa-chevron-down text-xl"></i>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">About Me</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">끊임없이 성장하는 개발자</h2>
+      </div>
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="fade-in">
+          <div class="relative">
+            <div class="absolute -inset-4 bg-gradient-to-br from-brand-200/50 to-brand-100/30 rounded-3xl blur-lg"></div>
+            <div class="relative w-full aspect-square max-w-sm mx-auto rounded-3xl overflow-hidden shadow-xl shadow-brand-200/30 border border-brand-100">
+              <img src="https://images.unsplash.com/photo-1661854236305-b02cef4aa0af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="프로필 사진" class="w-full h-full object-cover">
+            </div>
+          </div>
+        </div>
+        <div class="fade-in">
+          <p class="text-gray-500 leading-relaxed mb-6 text-lg">
+            백엔드 개발에 열정을 가진 개발자입니다. Java와 Spring 생태계를 중심으로
+            안정적이고 확장 가능한 서비스를 만드는 것을 좋아합니다.
+          </p>
+          <p class="text-gray-500 leading-relaxed mb-8 text-lg">
+            클린 코드와 좋은 설계 원칙을 중요하게 생각하며,
+            팀원들과의 협업을 통해 더 나은 결과물을 만들어가는 과정을 즐깁니다.
+          </p>
+          <div class="grid grid-cols-3 gap-4">
+            <div class="text-center p-4 bg-brand-50 rounded-2xl border border-brand-100">
+              <i class="fas fa-map-marker-alt text-brand-500 text-lg mb-2"></i>
+              <p class="text-sm font-semibold text-gray-700">대한민국</p>
+            </div>
+            <div class="text-center p-4 bg-brand-50 rounded-2xl border border-brand-100">
+              <i class="fas fa-graduation-cap text-brand-500 text-lg mb-2"></i>
+              <p class="text-sm font-semibold text-gray-700">컴퓨터공학</p>
+            </div>
+            <div class="text-center p-4 bg-brand-50 rounded-2xl border border-brand-100">
+              <i class="fas fa-server text-brand-500 text-lg mb-2"></i>
+              <p class="text-sm font-semibold text-gray-700">Backend</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 lg:py-28 bg-brand-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">Skills</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">기술 스택</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+        <!-- Java -->
+        <div class="skill-card group fade-in">
+          <div class="bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/30 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-orange-50 flex items-center justify-center group-hover:bg-orange-100 transition-colors border border-orange-100">
+              <i class="fab fa-java text-2xl text-orange-500"></i>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm">Java</p>
+          </div>
+        </div>
+        <!-- Spring -->
+        <div class="skill-card group fade-in">
+          <div class="bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/30 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-emerald-50 flex items-center justify-center group-hover:bg-emerald-100 transition-colors border border-emerald-100">
+              <i class="fas fa-leaf text-2xl text-emerald-500"></i>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm">Spring</p>
+          </div>
+        </div>
+        <!-- JavaScript -->
+        <div class="skill-card group fade-in">
+          <div class="bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/30 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-yellow-50 flex items-center justify-center group-hover:bg-yellow-100 transition-colors border border-yellow-100">
+              <i class="fab fa-js-square text-2xl text-yellow-500"></i>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm">JavaScript</p>
+          </div>
+        </div>
+        <!-- HTML -->
+        <div class="skill-card group fade-in">
+          <div class="bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/30 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-red-50 flex items-center justify-center group-hover:bg-red-100 transition-colors border border-red-100">
+              <i class="fab fa-html5 text-2xl text-red-500"></i>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm">HTML</p>
+          </div>
+        </div>
+        <!-- CSS -->
+        <div class="skill-card group fade-in">
+          <div class="bg-white rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/30 border border-gray-100 shadow-sm">
+            <div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors border border-blue-100">
+              <i class="fab fa-css3-alt text-2xl text-blue-500"></i>
+            </div>
+            <p class="font-semibold text-gray-700 text-sm">CSS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 lg:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <p class="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">Projects</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900">프로젝트</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Project 1 -->
+        <div class="project-card fade-in">
+          <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/20 border border-gray-100 shadow-sm">
+            <div class="h-48 relative overflow-hidden bg-gradient-to-br from-brand-100 to-brand-200/50">
+              <img src="https://picsum.photos/seed/ecommerce-api/600/400" alt="E-Commerce API" class="w-full h-full object-cover mix-blend-overlay opacity-60">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-white/90 shadow-lg flex items-center justify-center">
+                  <i class="fas fa-shopping-cart text-2xl text-brand-600"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold mb-2 text-gray-900">E-Commerce API</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                Spring Boot 기반 이커머스 REST API. 상품 관리, 주문 처리, 결제 연동 기능을 포함합니다.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Spring Boot</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">JPA</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">MySQL</span>
+              </div>
+              <a href="#" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors font-semibold">
+                <i class="fab fa-github mr-2"></i> GitHub에서 보기 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="project-card fade-in">
+          <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/20 border border-gray-100 shadow-sm">
+            <div class="h-48 relative overflow-hidden bg-gradient-to-br from-emerald-100 to-blue-100/50">
+              <img src="https://picsum.photos/seed/realtime-chat/600/400" alt="실시간 채팅" class="w-full h-full object-cover mix-blend-overlay opacity-60">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-white/90 shadow-lg flex items-center justify-center">
+                  <i class="fas fa-comments text-2xl text-emerald-600"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold mb-2 text-gray-900">실시간 채팅 서비스</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                WebSocket을 활용한 실시간 채팅 애플리케이션. 1:1 채팅 및 그룹 채팅을 지원합니다.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Spring</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">WebSocket</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Redis</span>
+              </div>
+              <a href="#" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors font-semibold">
+                <i class="fab fa-github mr-2"></i> GitHub에서 보기 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="project-card fade-in">
+          <div class="bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-brand-200/20 border border-gray-100 shadow-sm">
+            <div class="h-48 relative overflow-hidden bg-gradient-to-br from-purple-100 to-pink-100/50">
+              <img src="https://picsum.photos/seed/blog-platform/600/400" alt="블로그 플랫폼" class="w-full h-full object-cover mix-blend-overlay opacity-60">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-2xl bg-white/90 shadow-lg flex items-center justify-center">
+                  <i class="fas fa-blog text-2xl text-purple-600"></i>
+                </div>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-lg font-bold mb-2 text-gray-900">개인 블로그 플랫폼</h3>
+              <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                마크다운 지원 블로그 플랫폼. 게시글 CRUD, 카테고리, 태그 기능을 제공합니다.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Java</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Spring MVC</span>
+                <span class="px-3 py-1 rounded-full bg-brand-50 text-xs text-brand-700 font-medium border border-brand-100">Thymeleaf</span>
+              </div>
+              <a href="#" class="inline-flex items-center text-sm text-brand-600 hover:text-brand-800 transition-colors font-semibold">
+                <i class="fab fa-github mr-2"></i> GitHub에서 보기 <i class="fas fa-arrow-right ml-2 text-xs"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 lg:py-28 bg-brand-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="text-center mb-12 fade-in">
+          <p class="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">Contact</p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">함께 일해요</h2>
+          <p class="text-gray-500 max-w-lg mx-auto">
+            함께 일하고 싶으시거나 궁금한 점이 있으시면 편하게 연락해주세요.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
+          <a href="mailto:example@email.com" class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl hover:shadow-lg hover:shadow-brand-200/20 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto justify-center border border-gray-100 shadow-sm group">
+            <div class="w-10 h-10 rounded-xl bg-brand-50 flex items-center justify-center border border-brand-100 group-hover:bg-brand-100 transition-colors">
+              <i class="fas fa-envelope text-brand-600"></i>
+            </div>
+            <span class="text-gray-700 font-medium text-sm">example@email.com</span>
+          </a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl hover:shadow-lg hover:shadow-brand-200/20 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto justify-center border border-gray-100 shadow-sm group">
+            <div class="w-10 h-10 rounded-xl bg-gray-50 flex items-center justify-center border border-gray-200 group-hover:bg-gray-100 transition-colors">
+              <i class="fab fa-github text-gray-700"></i>
+            </div>
+            <span class="text-gray-700 font-medium text-sm">GitHub</span>
+          </a>
+          <a href="#" class="flex items-center gap-3 px-6 py-4 bg-white rounded-2xl hover:shadow-lg hover:shadow-brand-200/20 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto justify-center border border-gray-100 shadow-sm group">
+            <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center border border-blue-100 group-hover:bg-blue-100 transition-colors">
+              <i class="fab fa-linkedin text-blue-600"></i>
+            </div>
+            <span class="text-gray-700 font-medium text-sm">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 bg-white border-t border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="text-gray-400 text-sm">&copy; 2026 임영민. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
